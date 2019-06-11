@@ -1,0 +1,16 @@
+# Providers
+providerList:
+  - &pr1
+    company: company-p1
+    nif: 12345678b
+    address: C/ TPV-provider, 1, 1A, 28000 Madrid
+    phone: 9166666601
+    email: p1@gmail.com
+    note: provider 1
+    active: true
+  - &pr2
+    company: company-p2
+    address: C/ TPV-provider, 2, 2A, 28000 Madrid
+    phone: 9166666602
+    note: provider 2
+    active: false
