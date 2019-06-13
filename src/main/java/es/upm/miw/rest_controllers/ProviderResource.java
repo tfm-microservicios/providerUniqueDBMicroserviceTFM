@@ -6,13 +6,7 @@ import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import es.upm.miw.business_controllers.ProviderController;
 import es.upm.miw.dtos.ProviderDto;
@@ -61,5 +55,10 @@ public class ProviderResource {
 	public List<ProviderMinimunDto> findByAttributesLike(
 			@Valid @RequestBody ProviderSearchInputDto providerSearchInputDto) {
 		return this.providerController.findByAttributesLike(providerSearchInputDto);
+	}
+
+	@DeleteMapping(value = ID)
+	public void delete(@PathVariable String id) {
+		this.providerController.delete(id);
 	}
 }
