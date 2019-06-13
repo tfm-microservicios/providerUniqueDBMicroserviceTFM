@@ -46,10 +46,7 @@ public class DatabaseSeederService {
 		String[] profiles = this.environment.getActiveProfiles();
 		if (Arrays.stream(profiles).anyMatch("dev"::equals)) {
 			this.deleteAllAndInitializeAndLoadYml();
-		} 
-//		else if (Arrays.stream(profiles).anyMatch("prod"::equals)) {
-//			this.initialize();
-//		}
+		}
 	}
 
 	private void initialize() {
@@ -84,7 +81,7 @@ public class DatabaseSeederService {
 						.error("File " + this.ymlFileName + " doesn't exist or can't be opened");
 			}
 		} else {
-			LogManager.getLogger(this.getClass()).error("File db.yml doesn't configured");
+			LogManager.getLogger(this.getClass()).error("File db.yml isn't configured");
 		}
 	}
 
